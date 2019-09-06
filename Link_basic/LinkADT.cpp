@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#define NULL 0
+
 
 //函数声明
 struct Node* createLink();
@@ -17,34 +19,13 @@ struct Node{
 
 int main(){
 	 
-	//定义节点变量
-	//struct Node node1 = { 1, NULL };
-	//struct Node node2 = { 2, NULL };
-	//struct Node node3 = { 3, NULL };
-	//
-	//node1.next = &node2;
-	//node2.next = &node3;
-
-	//赋予变量的地址
-	//int d = 1;
-	//int *p = &d;
-	//d = 3;
-	//(*p)++;
-	//printf("d==%d\n",*p);
-
-
-	//动态内存申请
-	//int *p1 = (int *)malloc(sizeof(int));
-	//*p1 = 5;
-	//printf("p1==%d\n",*p1);
-
-
-
 	struct Node* link = createLink(); 
 	for(int i = 0; i < 10; i++){
-		if(i < 6) insertNodeByHead(link, i);
-		else insertNodeByTail(link,i);
-		
+		if (i < 6) {
+			insertNodeByHead(link, i);
+		}else {
+			insertNodeByTail(link, i);
+		}
 	}
 	
 	printLink(link);
