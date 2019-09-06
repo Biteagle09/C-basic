@@ -64,6 +64,7 @@ struct A {
 
 //Ή²Ν¬Με
 union TestU {
+	char ch[11];
 	char i;
 	short j;
 };
@@ -104,6 +105,12 @@ int main() {
 	union TestU  tu = { 996 };
 	printf_s("TestU.i==%d\n", tu.i);
 	printf_s("TestU.j==%d\n", tu.j);
+
+	printf_s("TestU==%d\n",sizeof(TestU));
+	printf_s("tu.ch[10]==%d\n", tu.ch[10]);
+	printf_s("tu.ch[9]==%d\n", tu.ch[9]);
+	printf_s("tu.ch[8]==%d\n", tu.ch[8]);
+
 	return 0;
 }
 
