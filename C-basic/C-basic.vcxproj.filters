@@ -15,7 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="enum-my.cpp">
+    <ClCompile Include="enum-my.txt">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="structTest.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

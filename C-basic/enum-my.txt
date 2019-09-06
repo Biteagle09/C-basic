@@ -11,7 +11,7 @@ enum Hero {Guanyu=11, Zhangfei=22, Liubei=33, Caocao=6, Zhaoyun=9};
 
 
 
-
+/**
 int main() {
 
 	enum Hero hero = Zhangfei;
@@ -22,7 +22,7 @@ int main() {
 	 
 	return 0;
 }
-
+*/
 
 int  createInt(int a, int b) {
 	return a + b;
