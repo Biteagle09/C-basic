@@ -1,6 +1,6 @@
-#include "stdio.h"
-#include "stdlib.h"
-#include "string.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 void say(struct Person p);
 void showTime(struct DT* dte);
