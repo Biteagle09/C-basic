@@ -1,9 +1,11 @@
 #include "stdio.h"
-#include "cstdlib.h"
+#include "stdlib.h"
 #include "string.h"
 
 void say(struct Person p);
-void showTime(struct DT *dte);
+void showTime(struct DT* dte);
+void testtu(union TestU tu);
+
 
 typedef struct DT {
 	int year;
@@ -14,9 +16,9 @@ typedef struct DT {
 	unsigned short second;
 }DateTime;
 
- 
+
 //定义一个结构体
-struct  Person{
+struct  Person {
 	char name[30];
 	char sex[4];
 	unsigned short age;
@@ -25,7 +27,7 @@ struct  Person{
 	struct DT birthday;
 };
 
-struct Node{
+struct Node {
 	int data;
 	struct Node* next;
 };
@@ -58,7 +60,7 @@ struct Test4 {
 //结构体测试
 struct A {
 	int nums;
-	struct A *a;
+	struct A* a;
 };
 
 
@@ -74,8 +76,8 @@ union TestU {
 int main() {
 
 	struct Person p1 = { "王坚","男",43,176,66.783456f,{1982,12,31,18,23,51} };
-	struct Person p2 = {"张小龙","男",54,177,69.23456f};
-	DT t1 = {2019,11,5};
+	struct Person p2 = { "张小龙","男",54,177,69.23456f };
+	DT t1 = { 2019,11,5 };
 
 	//showTime(&t1);
 
@@ -85,7 +87,7 @@ int main() {
 	//say(p2);
 
 
-	
+
 	struct Node* n1 = (struct Node*)malloc(sizeof(struct Node));
 	struct Node* n2 = (struct Node*)malloc(sizeof(struct Node));
 	struct Node* n3 = (struct Node*)malloc(sizeof(struct Node));
@@ -100,17 +102,12 @@ int main() {
 	//printf_s("Test3==%d\n", sizeof(Test3));
 	//printf_s("Test4==%d\n", sizeof(Test4));
 
-	struct Node arr[3] = {*n1,*n2,*n3};
+	struct Node arr[3] = { *n1,*n2,*n3 };
 
 	union TestU  tu = { 996 };
-	printf("TestU.i==%d\n", tu.i);
-	printf_s("TestU.j==%d\n", tu.j);
-
-	printf_s("TestU==%d\n",sizeof(TestU));
-	printf_s("tu.ch[10]==%d\n", tu.ch[10]);
-	printf_s("tu.ch[9]==%d\n", tu.ch[9]);
-	printf_s("tu.ch[8]==%d\n", tu.ch[8]);
-
+	printf_s("sizeof(TestU)==%d\n", sizeof(TestU));
+	testtu(tu);
+	printf_s("\nHello\n");
 	return 0;
 }
 
@@ -124,12 +121,15 @@ void say(struct Person p) {
 }
 
 
-void showTime(struct DT *dte) {
+void showTime(struct DT* dte) {
 	printf_s("%04d-%02d-%02d  %02d:%02d:%02d\n", dte->year, dte->month, dte->day, dte->hour, dte->minute, dte->second);
 }
 
 
-
-
-
-
+void testtu(union TestU tu) {
+	printf_s("TestU.i==%d\n", tu.i);
+	printf_s("TestU.j==%d\n", tu.j);
+	printf_s("tu.ch[10]==%d\n", tu.ch[10]);
+	printf_s("tu.ch[9]==%d\n", tu.ch[9]);
+	printf_s("tu.ch[8]==%d\n", tu.ch[8]);
+}
