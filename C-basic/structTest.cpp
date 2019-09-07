@@ -1,5 +1,5 @@
 #include "stdio.h"
-#include "stdlib.h"
+#include "cstdlib.h"
 #include "string.h"
 
 void say(struct Person p);
@@ -103,7 +103,7 @@ int main() {
 	struct Node arr[3] = {*n1,*n2,*n3};
 
 	union TestU  tu = { 996 };
-	printf_s("TestU.i==%d\n", tu.i);
+	printf("TestU.i==%d\n", tu.i);
 	printf_s("TestU.j==%d\n", tu.j);
 
 	printf_s("TestU==%d\n",sizeof(TestU));
