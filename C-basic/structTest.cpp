@@ -66,9 +66,11 @@ struct A {
 
 //Ή²Ν¬Με
 union TestU {
-	char ch[11];
-	char i;
+	short ch[3];
+	int i;
 	short j;
+	
+	
 };
 
 
@@ -105,9 +107,10 @@ int main() {
 	struct Node arr[3] = { *n1,*n2,*n3 };
 
 	union TestU  tu = { 996 };
-	printf_s("sizeof(TestU)==%d\n", sizeof(TestU));
+	printf_s("sizeof(TestU)==%d\n", sizeof(tu.i));
 	testtu(tu);
 	printf_s("\nHello\n");
+	system("pause");
 	return 0;
 }
 
@@ -129,7 +132,10 @@ void showTime(struct DT* dte) {
 void testtu(union TestU tu) {
 	printf_s("TestU.i==%d\n", tu.i);
 	printf_s("TestU.j==%d\n", tu.j);
-	printf_s("tu.ch[10]==%d\n", tu.ch[10]);
-	printf_s("tu.ch[9]==%d\n", tu.ch[9]);
-	printf_s("tu.ch[8]==%d\n", tu.ch[8]);
+	printf_s("tu.ch[0]==%d\n", tu.ch[0]);
+	printf_s("tu.ch[1]==%d\n", tu.ch[1]);
+	printf_s("tu.ch[2]==%d\n", tu.ch[2]);
+	//printf_s("tu.ch[10]==%d\n", tu.ch[10]);
+	//printf_s("tu.ch[9]==%d\n", tu.ch[9]);
+	//printf_s("tu.ch[8]==%d\n", tu.ch[8]);
 }
