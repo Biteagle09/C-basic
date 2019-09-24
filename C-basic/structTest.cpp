@@ -93,11 +93,21 @@ int main() {
 	struct Node* n1 = (struct Node*)malloc(sizeof(struct Node));
 	struct Node* n2 = (struct Node*)malloc(sizeof(struct Node));
 	struct Node* n3 = (struct Node*)malloc(sizeof(struct Node));
-	n1->data = 1;
-	n2->data = 2;
-	n3->data = 3;
-	n1->next = n2;
-	n2->next = n3;
+	if (n1) {
+		n1->data = 1;
+		n1->next = n2;
+	}
+	if (n2) {
+		n2->data = 2;
+		n2->next = n3;
+	}
+	if (n3) {
+		n3->data = 3;
+		n3->next = NULL;
+	}
+	
+	
+	
 
 	//printf_s("Test1==%d\n", sizeof(Test1));
 	//printf_s(" Test2==%d\n", sizeof(Test2));
@@ -105,12 +115,10 @@ int main() {
 	//printf_s("Test4==%d\n", sizeof(Test4));
 
 	struct Node arr[3] = { *n1,*n2,*n3 };
-
 	union TestU  tu = { 996 };
 	printf_s("sizeof(TestU)==%d\n", sizeof(tu.i));
 	testtu(tu);
 	printf_s("\nHello\n");
-	system("pause");
 	return 0;
 }
 
