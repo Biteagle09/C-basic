@@ -57,7 +57,7 @@ struct Test4 {
 	short s;
 };
 
-//结构体测试
+//结构体测试A
 struct A {
 	int nums;
 	struct A* a;
@@ -69,8 +69,6 @@ union TestU {
 	short ch[3];
 	int i;
 	short j;
-	
-	
 };
 
 
